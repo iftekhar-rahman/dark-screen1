@@ -1,0 +1,58 @@
+/*--------------Login Page CSS----------------*/ 
+
+.login-form-section {
+    height: 100%;
+}
+.login-form-wrap {
+    flex-basis: 25%;
+    background: #303030;
+    padding-right: 30px;
+    .login-form-logo {
+        margin: 50px 0 100px;
+    }
+    .form-wrap {
+        width: 80%;
+        margin: 0 auto;
+        .form-item {
+            margin-bottom: 25px;
+            i {
+                position: absolute;
+                left: 0;
+                top: 13px;
+                color: #fff;
+                font-size: 18px;
+            }
+            &.form-btns {
+                margin-top: 30px;
+            }
+            &.form-btns {
+                a {
+                    color: #1ABC9C;
+                    font-weight: 700;
+                    &:hover{
+                        color: #D898A9;
+                    }
+                }
+            }
+            &.submit-btn{
+                .boxed-btn{
+                    width: 100%;
+                    margin-top: 40px;
+                }
+            }
+        }
+    }
+}
+.login-form-bg {
+    flex-basis: 75%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: #ddd;
+}
+
+
+
+
+
+
