@@ -1,12 +1,33 @@
 /*--------------Login Page CSS----------------*/ 
 
 .login-form-section {
-    height: 100%;
+    @extend %h100;
 }
 .login-form-wrap {
     flex-basis: 25%;
     background: #303030;
     padding-right: 30px;
+    @include mx-desktops{
+        flex-basis: 30%;
+    }
+    @include mx-tablet{
+        flex-basis: 40%;
+    }
+    @include all-below-med{
+        padding-right: 0;
+    }
+    @include mx-mobile-lg{
+        flex-basis: 45%;
+    }
+    @include all-mx-mobile{
+        flex-basis: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        height: 100%;
+        background: #00000090;
+    }
     .login-form-logo {
         margin: 50px 0 100px;
     }
@@ -16,10 +37,10 @@
         .form-item {
             margin-bottom: 25px;
             i {
-                position: absolute;
+                @extend %posabsolute;
+                @extend %white-color;
                 left: 0;
                 top: 13px;
-                color: #fff;
                 font-size: 18px;
             }
             &.form-btns {
@@ -27,16 +48,16 @@
             }
             &.form-btns {
                 a {
-                    color: #1ABC9C;
+                    @extend %primary-color;
                     font-weight: 700;
                     &:hover{
-                        color: #D898A9;
+                        @extend %secondary-color;
                     }
                 }
             }
             &.submit-btn{
                 .boxed-btn{
-                    width: 100%;
+                    @extend %w100;
                     margin-top: 40px;
                 }
             }
@@ -45,14 +66,23 @@
 }
 .login-form-bg {
     flex-basis: 75%;
-    height: 100%;
+    @extend %h100;
     background-size: cover;
     background-position: center;
     background-color: #ddd;
+    @include mx-desktops{
+        flex-basis: 70%;
+    }
+    @include mx-tablet{
+        flex-basis: 60%;
+    }
+    @include mx-mobile-lg{
+        flex-basis: 55%;
+    }
+    @include all-mx-mobile{
+        flex-basis: 100%;
+    }
 }
-
-
-
 
 
 

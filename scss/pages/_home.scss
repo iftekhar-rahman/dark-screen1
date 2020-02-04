@@ -1,60 +1,61 @@
 /*================Home Page CSS===============*/
 
+// .toggle-button
 .toggle-label {
-  position: relative;
-  display: block;
+  @extend %posrelative;
+  @extend %displayblock;
   width: 80px;
   height: 30px;
   margin-top: 0px;
   border: 2px solid #fff;
   margin: 0 auto;
-  border-radius: 50px
+  @extend %borderradius50px;
 }
 .toggle-label input[type=checkbox] { 
   opacity: 0;
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  @extend %posabsolute;
+  @extend %w100;
+  @extend %h100;
 }
 .toggle-label input[type=checkbox]+.back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #1ABC9C;
-    transition: background 150ms linear;  
-    border-radius: 50px;
+  @extend %posabsolute;
+  @extend %w100;
+  @extend %h100;
+  @extend %primary-bg-color;
+  transition: background 150ms linear;  
+  @extend %borderradius50px;
 }
 .toggle-label input[type=checkbox]:checked+.back {
-    background: #1ABC9C; /*primary*/
+  @extend %primary-bg-color; /*primary*/
 }
 .toggle-label input[type=checkbox]:checked+.back.active {
-    background: #fff; /*secondary*/
+  @extend %white-bg-color; /*secondary*/
 }
 .toggle-label input[type=checkbox]+.back .toggle {
-  display: block;
-  position: absolute;
+  @extend %displayblock;
+  @extend %posabsolute;
   content: ' ';
-  background: #fff;
+  @extend %white-bg-color;
   width: 30px; 
   height: 30px;
   transition: margin 150ms linear;
   top: -2px;
   left: -2px;
-  border-radius: 50px;
+  @extend %borderradius50px;
  
 }
 .toggle-label input[type=checkbox]:checked+.back .toggle {
     margin-left: 49px;
 }
 .toggle-label .label {
-  display: block;
-  position: absolute;
+  @extend %displayblock;
+  @extend %posabsolute;
   width: 50%;
-  color: #fff;
+  @extend %white-color;
   line-height: 27px;
-  text-align: center;
+  @extend %textcenter;
+  @extend %cursorpointer;
   font-size: 12px;
-  cursor: pointer;
 }
 .toggle-label .label.on { 
   left: 4px; 
@@ -66,25 +67,21 @@
 }
 .toggle-label .back.active .on { 
   opacity: 1;
-  color: #D898A9;
+  @extend %secondary-color;
 }
 .toggle-label .back.active .off { 
   opacity: 0;
 }
 .toggle-label input[type=checkbox] + .back.active .toggle{
-  background-color: #D898A9 ;
+  @extend %secondary-bg-color;
 }
 .toggle-label input[type=checkbox]:checked+.back.active .label.off {
   color: #333333;
 }
   
-
-
-
-
-
+// .site-wrap 
 .site-wrap {
-  height: 100%;
+  @extend %w100;
   background: #303030;
   .container-fluid, .col {
     padding-left: 0;
@@ -99,45 +96,67 @@
 .sidebar {
   width: 20%;
   padding: 20px;
+  @include mx-desktops{
+    width: 25%;
+    padding: 20px 10px;
+  }
+  @include all-below-med{
+    width: 320px;
+    padding: 20px;
+    position: fixed;
+    left: -320px;
+    top: 0;
+    background: #000;
+    z-index: 999999;
+    height: 100%;
+    overflow-y: scroll;
+    transition: all .5s ease;
+    &.active{
+      left: 0;
+    }
+  }
   .site-logo {
-    margin-bottom: 70px;
+    margin-bottom: 75px;
+    @include all-below-mobile-lg{
+      margin-bottom: 30px;
+    }
   }
   ul {
     padding-right: 30px;
     li {
-      position: relative;
+      @extend %posrelative;
       padding-left: 60px;
       margin-bottom: 30px;
       z-index: 2;
-      transition: .7s;
+      @extend %basetransition3;
       &:hover{
         .icon1 {
-          color: #fff;
-          background: #1ABC9C;
+          @extend %white-color;
+          @extend %primary-bg-color;
         }
         .icon2 {
-          color: #1ABC9C;
+          @extend %primary-color;
         }
       }
       a {
         color: #707070;
-        display: block;
+        @extend %displayblock;
         padding: 6px 0px;
         .icon1 {
           font-size: 25px;
-          position: absolute;
+          @extend %posabsolute;
           left: -22px;
           top: -12px;
           width: 65px;
           height: 55px;
           background: transparent;
-          text-align: right;
+          @extend %textright;
           padding-right: 17px;
           line-height: 57px;
           border-radius: 0 50px 50px 0;
         }
         .icon2 {
-          position: absolute;
+          @extend %posabsolute;
           right: 0;
           top: 2px;
           color: #9FA1A4;
@@ -147,23 +166,23 @@
     }
   }
   .payment-section {
-      background: #D898A9;
+    @extend %secondary-bg-color;
       border-radius: 10px;
       color: #303030;
       padding: 15px 10px 15px 10px;
-      margin-top: 50px;
+      margin-top: 60px;
       .card-wrap {
         margin-bottom: 20px;
-        color: #fff;
+        @extend %white-color;
         .visa-card {
-          color: #333;
+          color: #303030;
           line-height: 43px;
           font-size: 48px;
           margin-right: 10pX;
       }
     }
     .bill-title {
-      color: #fff;
+      @extend %white-color;
     }
     h4 {
       font-size: 18px;
@@ -175,57 +194,87 @@
 // .dashboard-wrap
 .dashboard-wrap {
   width: 80%;
-  background: #37C2A6;
+  @extend %primary-bg-color;
   padding: 30px 190px 0 130px;
   margin-bottom: 120px;
   border-radius: 0 0 0px 100px;
+  @include mx-desktops{
+      width: 75%;
+      padding: 30px 50px 0 50px;
+  }
+  @include all-below-med{
+      width: 100%;
+      margin: 0 auto;
+      padding: 30px 0px 0 0px;
+      border-radius: 0 ;
+  }
   // .dashboard-header
   .dashboard-header {
+    @include all-below-med{
+      width: 95%;
+      margin: 0 auto;
+    }
+    @include all-mx-mobile{
+      // flex-wrap: wrap;
+      position: relative;
+    }
     .dashboard-header-left {
-      color: #fff;
-      text-transform: uppercase;
+      @extend %white-color;
+      @extend %uppercase;
       font-size: 18px;
       margin-bottom: 10px;
+      @include all-mx-mobile{
+        font-size: 16px;
+      }
       h2 {
         font-size: 50px;
         color: #212529;
         text-transform: initial;
+        @include mx-desktops{
+          font-size: 40px;
+        }
+        @include all-below-mobile-lg{
+          font-size: 32px;
+        }
         span {
-          color: #fff;
+          @extend %white-color;
           margin-left: 5px;
         }
       }
     }
     .dashboard-header-right {
+      @include all-mx-mobile{
+        // order: 0;
+      }
       span {
         color: #212529;
         font-size: 30px;
-        margin-left: 10px;
-        cursor: pointer;
+        margin-left: 20px;
+        @extend %cursorpointer;
       }
       .dashboard-icon1 {
-        position: relative;
+        @extend %posrelative;
         .noti {
           width: 10px;
           height: 10px;
-          background: #D898A9;
-          position: absolute;
-          right: 10px;
-          top: 7px;
-          border-radius: 50px;
+          @extend %secondary-bg-color;
+          @extend %posabsolute;
+          right: 2px;
+          top: 9px;
+          @extend %borderradius50px;
         }
       }
       .dashboard-icon3 {
-        margin-left: 20px;
+        margin-left: 25px;
         width: 45px;
         height: 45px;
-        display: inline-block;
+        @extend %displayinline;
         background-color: #212529;
-        border-radius: 50px;
+        @extend %borderradius50px;
         line-height: 47px;
-        text-align: center;
-        i {
-          color: #37C2A6;
+        @extend %textcenter;
+        .fa-ellipsis-h {
+          @extend %primary-color;
         }
       }
     }
@@ -236,24 +285,29 @@
     padding: 35px 20px 20px;
     margin-bottom: -55px;
     border-radius: 20px;
+    @include all-below-med{
+      width: 95%;
+      margin: 0 auto;
+      margin-bottom: -80px;
+    }
     .show-more {
       a {
-        color: #1ABC9C;
+        @extend %primary-color;
         padding: 10px;
         margin-top: 10px;
-        transition: .5s;
+        @extend %basetransition2;
         &:hover{
-          color: #D898A9;
+          @extend %secondary-color;
         }
       }
     }
     .dashboard-content-header{
-      color: #fff;
+      @extend %white-color;
       margin-bottom: 20px;
       h4 {
         font-size: 20px;
         font-weight: 500;
-        text-transform: uppercase;
+        @extend %uppercase;
       }
       .dashboard-content-header-right {
         font-size: 20px;
@@ -264,89 +318,291 @@
       }
     }
     .dashboard-content{
+     
       .dashboard-content-row:nth-child(even) {
         background: #98D8C7
       }
       .dashboard-content-row:nth-child(odd) {
-        background: #1ABC9C
+        @extend %primary-bg-color;
       }
       .dashboard-content-row{
         padding: 16px 20px;
+        @include all-below-mobile-lg{
+          padding: 16px 15px;
+        }
+        @include all-mx-mobile{
+          flex-wrap: wrap;
+        }
         .dashboard-inner-item:nth-child(1) {
-          width: 50%;
+          flex-basis: 50%;
+          @include mx-desktops{
+            flex-basis: 52%;
+          }
+          @include mx-mobile-lg{
+            flex-basis: 60%;
+          }
+          @include all-mx-mobile{
+            flex-basis: 100%;
+            padding-left: 50px;
+          }
         }
         .dashboard-inner-item:nth-child(2) {
             flex-basis: 25%;
+            @include mx-desktops{
+              flex-basis: 22%;
+            }
+            @include mx-mobile-lg{
+              flex-basis: 25%;
+            }
+            @include all-mx-mobile{
+              flex-basis: 50%;
+            }
         }
         .dashboard-inner-item:nth-child(3) {
             flex-basis: 25%;
+            @include mx-desktops{
+              flex-basis: 26%;
+            }
+            @include mx-mobile-lg{
+              flex-basis: 15%;
+            }
+            @include all-mx-mobile{
+              flex-basis: 50%;
+            }
         }
         &.header {
           border-radius: 10px 10px 0 0;
           background: #707070 !important;
-          padding: 15px 20px 15px 0px;
+          padding: 13px 20px 13px 0px;
+          .dashboard-inner-item{
+            @include all-below-mobile-lg{
+              padding-left: 0;
+            }
+          }
+          @include all-below-mobile-lg{
+            padding: 13px 15px 13px 15px;
+            .dashboard-inner-item:nth-child(1){
+              flex-basis: 33.3333%;
+            }
+            .dashboard-inner-item:nth-child(2){
+              flex-basis: 33.3333%;
+            }
+            .dashboard-inner-item:nth-child(3){
+              flex-basis: 33.3333%;
+            }
+          }
+          @include all-mx-mobile{
+            padding: 13px 15px 13px 15px;
+            .dashboard-inner-item:nth-child(1){
+              flex-basis: 30%;
+            }
+            .dashboard-inner-item:nth-child(2){
+              flex-basis: 30%;
+            }
+            .dashboard-inner-item:nth-child(3){
+              flex-basis: 40%;
+            }
+          }
           h4 {
-            text-transform: uppercase;
+            @extend %uppercase;
             font-size: 18px;
             margin-left: 10px;
+            @include mx-desktops{
+              font-size: 16px;
+            }
+            @include all-below-mobile-lg{
+              margin-left: 0;
+              font-size: 16px;
+            }
+            @include all-mx-mobile{
+              font-size: 14px;
+            }
           }
-          // .dashboard-inner-item:nth-child(1) {
-          //   padding-left: 70px;
-          // }
         }
         h4 {
           font-size: 22px;
-          color: #fff;
+          @extend %white-color;
           margin: 0;
           font-weight: 500;
           text-transform: capitalize;
+          @include mx-desktops{
+            font-size: 20px;
+          }
+          @include all-below-mobile-lg{
+            font-size: 18px;
+          }
         }
         .dashboard-inner-item {
           color: #212529;
+          .dashboard-text{
+            @include all-mx-mobile{
+              padding-left: 65px;
+              margin-bottom: 15px;
+            }
+          }
           .icon {
-            position: absolute;
+            @extend %posabsolute;
             left: 0;
             top: -4px;
             color: #212529;
             font-size: 50px;
             line-height: 50px;
             width: 55px;
-            text-align: center;
+            @extend %textcenter;
+            // @include all-below-mobile-lg{
+            //   font-size: 45px;
+            //   line-height: 45px;
+            //   width: 50px;
+            // }
           }
           &:nth-child(1) {
             padding-left: 70px;
+            @include mx-desktops{
+              padding-left: 65px;
+            }
+            @include mx-mobile-lg{
+              padding-left: 60px;
+            }
+            @include all-mx-mobile{
+              padding-left: 0px;
+            }
           }
           h6 {
             background: #E8F1F8;
-            display: inline-block;
-            border-radius: 50px;
+            @extend %displayinline;
+            @extend %borderradius50px;
             font-weight: 400;
             font-size: 14px;
             padding: 5px 10px;
             margin: 0;
             &.ip1.active {
-              background-color: #D898A9;
-              color: #fff;
+              @extend %secondary-bg-color;
+              @extend %white-color;
             }
             &.ip2.active {
-              background-color: #D898A9;
-              color: #fff;
+              @extend %secondary-bg-color;
+              @extend %white-color;
             }
             &.ip3.active {
-              background-color: #D898A9;
-              color: #fff;
+              @extend %secondary-bg-color;
+              @extend %white-color;
             }
             &.ip4.active {
-              background-color: #D898A9;
-              color: #fff;
+              @extend %secondary-bg-color;
+              @extend %white-color;
             }
             &.ip5.active {
-              background-color: #D898A9;
-              color: #fff;
+              @extend %secondary-bg-color;
+              @extend %white-color;
             }
           }
         }
       }
     }
+  }
+}
+// .dropdown-wrap
+.dropdown-wrap{
+  .dashboard-icon3 {
+    .fa-close {
+      @extend %posabsolute;
+      top: 6px;
+      left: 14px;
+      @extend %invisible;
+      @extend %basetransition3;
+      font-size: 22px;
+      line-height: 33px;
+      @extend %secondary-color;
+    }
+    .fa-ellipsis-h{
+      @extend %visible;
+      top: 60px;
+    }
+  }
+  // .dropdownmenu
+  .dropdownmenu {
+    @extend %posabsolute;
+    right: 0;
+    top: 90px;
+    @extend %white-bg-color;
+    width: 200px;
+    @extend %borderradius5;
+    @extend %invisible;
+    @extend %basetransition3;
+    ul {
+      @extend %borderradius5;
+      li {
+        border-bottom: 1px solid #ccc;
+        a {
+          padding: 12px 15px;
+          @extend %displayblock;
+          i {
+            margin-right: 4px;
+          }
+        }
+        &:hover {
+          a {
+            color: #212529;
+          }
+        }
+        &:last-child {
+          border: 0;
+        }
+      }
+    }
+  }
+  &.active {
+    .dropdownmenu{
+      top: 60px;
+      @extend %visible;
+    }
+    .dashboard-icon3 {
+      .fa-close{
+        @extend %visible;
+      }
+      .fa-ellipsis-h {
+        @extend %invisible;
+      }
+    }
+  }
+}
+
+.close-btn {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 12px;
+  left: 258px;
+  z-index: 9999;
+  cursor: pointer;
+  text-align: center;
+  color: #D898A9;
+  line-height: 33px;
+  transition: all .5s ease;
+  border-radius: 50px;
+  font-size: 22px;
+  &:hover{
+    color: #fff;
+  }
+}
+.menu-btn {
+  span {
+    position: fixed;
+    left: -25px;
+    top: 163px;
+    width: 80px;
+    height: 50px;
+    background: #D898A9;
+    color: #fff;
+    text-align: center;
+    line-height: 49px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 10px 10px 0px 0px;
+    padding: 0;
+    transform: rotate(91deg);
+    z-index: 9999;
   }
 }

@@ -12,8 +12,6 @@
         <link href="css/font-awesome.min.css" rel="stylesheet">
 
         <!--Plugins-->
-        <link href="css/owl.carousel.min.css" rel="stylesheet">
-        <link href="css/nice-select.css" rel="stylesheet">
 
         <!--Theme specific styles-->
         <link href="css/style.css" rel="stylesheet">
@@ -31,6 +29,9 @@
                         <div class="dashboard-wrapper d-flex">
                             <!-- .sidebar starts -->
                             <div class="sidebar">
+                                <span class="close-btn d-block d-lg-none">
+                                    <i class="fa fa-close"></i>
+                                </span>
                                 <div class="site-logo">
                                     <a href="#"><img src="img/logo2.png" alt=""></a>
                                 </div>
@@ -60,6 +61,31 @@
                                             <span class="icon1"><i class="fa fa-download"></i></span> Download Client <span class="icon2"><i class="fa fa-angle-right"></i></span>
                                         </a>
                                     </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon1"><i class="fa fa-download"></i></span> Download Client <span class="icon2"><i class="fa fa-angle-right"></i></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon1"><i class="fa fa-download"></i></span> Download Client <span class="icon2"><i class="fa fa-angle-right"></i></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon1"><i class="fa fa-download"></i></span> Download Client <span class="icon2"><i class="fa fa-angle-right"></i></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon1"><i class="fa fa-download"></i></span> Download Client <span class="icon2"><i class="fa fa-angle-right"></i></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="icon1"><i class="fa fa-download"></i></span> Download Client <span class="icon2"><i class="fa fa-angle-right"></i></span>
+                                        </a>
+                                    </li>
                                 </ul>
                                 <div class="payment-section">
                                     <div class="card-wrap d-flex">
@@ -68,20 +94,37 @@
                                     </div>
                                     <h4 class="bill-title">$12.95 billed monthly.</h4>
                                     <h4>Change plan -<br/> Upgrade & save up to 35%</h4>
-                                    <p>Your subscribtion automaticaly renew on Dec 30, 2019</p>
+                                    <span class="pr-3 d-block">
+                                        <p>Your subscribtion automaticaly renew on Dec 30, 2019</p>
+                                    </span>
                                 </div>
                             </div><!-- .sidebar ends -->
                             <!-- .dashboard-wrap starts -->
-                            <div class="dashboard-wrap">
+                            <div class="dashboard-wrap position-relative">
+                                <div class="menu-btn d-block d-lg-none">
+                                    <span>Menu</span>
+                                </div>
                                 <div class="dashboard-header d-flex justify-content-between">
                                     <div class="dashboard-header-left">
                                         <h2>Welcome back, <span>Matt.</span></h2>
                                         <p>Hi Matt, this is your dashboard.</p>
                                     </div>
-                                    <div class="dashboard-header-right">
+                                    <div class="dashboard-header-right d-flex position-relative">
                                         <span class="dashboard-icon1"><i class="fa fa-bell"></i> <span class="noti"></span></span>
                                         <span class="dashboard-icon2"><i class="fa fa-cog"></i></span>
-                                        <span class="dashboard-icon3"><i class="fa fa-ellipsis-h"></i></span>
+                                        <div class="dropdown-wrap">
+                                            <span class="dashboard-icon3 position-relative">
+                                                <i class="fa fa-ellipsis-h"></i>
+                                                <i class="fa fa-close"></i>
+                                            </span>
+                                            <div class="dropdownmenu">
+                                                <ul>
+                                                    <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
+                                                    <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                                                    <li><a href="#"><i class="fa fa-sign-out"></i> Sign out</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="dashboard-content-wrap">
@@ -110,8 +153,10 @@
                                         <div class="dashboard-content-row windows-laptop d-flex align-items-center">
                                             <div class="dashboard-inner-item position-relative">
                                                 <span class="icon"><i class="fa fa-laptop"></i></span>
-                                                <h4>windows laptop</h4>
-                                                <p>Germany</p>
+                                                <div class="dashboard-text">
+                                                    <h4>windows laptop</h4>
+                                                    <p>Germany</p>
+                                                </div>
                                             </div>
                                             <div class="dashboard-inner-item">
                                                 <h6 class="ip ip1">145.55.67.88</h6>
@@ -131,8 +176,10 @@
                                         <div class="dashboard-content-row d-flex align-items-center">
                                             <div class="dashboard-inner-item position-relative">
                                                 <span class="icon"><i class="fa fa-laptop"></i></span>
-                                                <h4>Mackbook</h4>
-                                                <p>Germany</p>
+                                                <div class="dashboard-text">
+                                                    <h4>Mackbook</h4>
+                                                    <p>Germany</p>
+                                                </div>
                                             </div>
                                             <div class="dashboard-inner-item">
                                                 <h6 class="ip ip2">145.55.67.88</h6>
@@ -152,8 +199,10 @@
                                         <div class="dashboard-content-row d-flex align-items-center">
                                             <div class="dashboard-inner-item position-relative">
                                                 <span class="icon"><i class="fa fa-mobile"></i></span>
-                                                <h4>Android smartphone</h4>
-                                                <p>Germany</p>
+                                                <div class="dashboard-text">
+                                                    <h4>Android smartphone</h4>
+                                                    <p>Germany</p>
+                                                </div>
                                             </div>
                                             <div class="dashboard-inner-item">
                                                 <h6 class="ip ip3">145.55.67.88</h6>
@@ -173,8 +222,10 @@
                                         <div class="dashboard-content-row d-flex align-items-center">
                                             <div class="dashboard-inner-item position-relative">
                                                 <span class="icon"><i class="fa fa-laptop"></i></span>
-                                                <h4>Apple TV</h4>
-                                                <p>Germany</p>
+                                                <div class="dashboard-text">
+                                                    <h4>Apple TV</h4>
+                                                    <p>Germany</p>
+                                                </div>
                                             </div>
                                             <div class="dashboard-inner-item">
                                                 <h6 class="ip ip4">145.55.67.88</h6>
@@ -194,8 +245,10 @@
                                         <div class="dashboard-content-row d-flex align-items-center">
                                             <div class="dashboard-inner-item position-relative">
                                                 <span class="icon"><i class="fa fa-mobile"></i></span>
-                                                <h4>Apple TV</h4>
-                                                <p>Germany</p>
+                                                <div class="dashboard-text">
+                                                    <h4>Apple TV</h4>
+                                                    <p>Germany</p>
+                                                </div>
                                             </div>
                                             <div class="dashboard-inner-item">
                                                 <h6 class="ip ip5">145.55.67.88</h6>
@@ -227,8 +280,6 @@
         <script src="js/bootstrap.bundle.min.js"></script>       
 
         <!--Plugins-->
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/jquery.nice-select.min.js"></script>
 
         <!--Active & Custom JS-->
         <script src="js/main.js"></script>
